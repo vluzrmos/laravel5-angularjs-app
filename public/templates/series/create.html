@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h1>{{title}}</h1>
+</div>
+
+<div class="alert alert-danger" ng-show="errors">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+
+  <p class="list-unstyled" ng-repeat="error in errors">{{error}}</p>
+
+</div>
+
+<form class="form-horizontal" role="form">
+  <div class="form-group">
+    <div class="col-md-2">
+      <label for="serie_title">Título</label>
+    </div>
+    <div class="col-md-10">
+      <input type="text" ng-model="serie.title" id="serie_title" class="form-control"/>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-2">
+      <label for="serie_description">Descrição</label>
+    </div>
+
+    <div class="col-md-10">
+      <textarea type="text" ng-model="serie.description" id="serie_description" class="form-control"></textarea>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-2"></div>
+    <div class="col-md-10">
+      <button ng-click="save()" class="btn btn-primary" ng-disabled="disable_submit">Salvar</button>
+      <a href="#/series" class="btn btn-default ">Cancelar</a>
+    </div>
+  </div>
+
+</form>
