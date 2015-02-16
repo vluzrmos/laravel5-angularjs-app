@@ -9,7 +9,6 @@ SeriesApp.constant("base_api", "/api/v0");
 
 SeriesApp.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when("/", {redirectTo:"/series"});
-    $routeProvider.when("", {redirectTo:"/series"});
 
     $routeProvider.when("/series", {
         controller: "SeriesCtrl",
@@ -30,4 +29,6 @@ SeriesApp.config(['$routeProvider', function ($routeProvider) {
         controller: "EditSerieCtrl",
         templateUrl: "/templates/series/create.html"
     });
+
+    $routeProvider.otherwise("/series");
 }]);
