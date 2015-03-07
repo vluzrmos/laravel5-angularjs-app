@@ -25,7 +25,8 @@ E pronto, para testar a aplicação ative o servidor:
 ```sh
 php artisan serve
 ```
-Por padrão ele vai tentar rodar na porta 8000, mas voce pode mudar isso especificando a porta:
+Por padrão ele vai tentar rodar na porta 8000, mas voce pode mudar isso especificando a porta, por exemplo:
+
 Porta 9000:
 ```sh
 php artisan serve --port=9000
