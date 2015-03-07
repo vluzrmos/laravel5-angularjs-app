@@ -1,7 +1,7 @@
 ## Aplicação Laravel 5 + AngularJS
 
 ### Dependências
-* Bower
+* Bower (Opcional)
 * Laravel 5
 * PHP 5.4+
 * Composer
