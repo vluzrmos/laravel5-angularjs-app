@@ -47,12 +47,12 @@
         <script src="{{asset("bower_components/angularjs-truncate/src/truncate.js")}}"></script>
         <script src="{{asset("app.js")}}"></script>
 
-        @foreach(glob(public_path("/services/*.js")) as $service)
-            <script src="{{asset("services/".basename($service))}}"></script>
+        @foreach($ngServices as $service)
+            <script src="{{$service}}"></script>
         @endforeach
 
-        @foreach(glob(public_path("/controllers/*.js")) as $controller)
-            <script src="{{asset("/controllers/".basename($controller))}}"></script>
+        @foreach($ngControllers as $controller)
+            <script src="{{$controller}}"></script>
         @endforeach
 
     </body>

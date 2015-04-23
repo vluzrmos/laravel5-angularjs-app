@@ -25,10 +25,26 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app->bind(
-			'Illuminate\Contracts\Auth\Registrar',
-			'App\Services\Registrar'
-		);
+		$this->registerBindings();
+        $this->registerViewComposers();
 	}
 
+    /**
+     * Binds to the application
+     */
+    public function registerBindings(){
+        $this->app->bind(
+            'Illuminate\Contracts\Auth\Registrar',
+            'App\Services\Registrar'
+        );
+    }
+
+    /**
+     * View Composers
+     */
+    public function registerViewComposers(){
+        $view = $this->app->make('view');
+
+        $view->composer("app", 'App\ViewComposers\NgServicesAndControllersComposer');
+    }
 }
